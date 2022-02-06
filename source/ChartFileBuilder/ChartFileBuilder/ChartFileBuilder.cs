@@ -53,6 +53,11 @@ namespace ChartFileBuilder
             tbBreakoutFilename.Text = bofn;
             tbResultFilename.Text = rfn;
 
+            if (!System.IO.Directory.Exists(tbOutputDirectory.Text))
+            {
+                System.IO.Directory.CreateDirectory(tbOutputDirectory.Text);
+            }
+
             var file = new System.IO.StreamWriter(tbOutputDirectory.Text + sfn);
             file.Close();
 
