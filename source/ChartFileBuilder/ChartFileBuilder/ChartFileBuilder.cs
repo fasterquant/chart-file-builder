@@ -16,13 +16,14 @@ namespace ChartFileBuilder
         private const string _baseCountPlaceHolder = "baseCount";
         private const string _setupClosePercentGainPlaceHolder = "setupClosePercentGain";
         private const string _breakoutClosePercentGainPlaceHolder = "_breakoutClosePercentGain";
+        private const string _setupType = "_setupType";
 
         public ChartFileBuilder()
         {
-            _setupFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_0_Setup_BCW{_baseCountPlaceHolder}.JPG";
-            _breakoutFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_1_Breakout.JPG";
-            _resultFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_2_Result_SU{_setupClosePercentGainPlaceHolder}_BO{_breakoutClosePercentGainPlaceHolder}.JPG";
-            
+            _setupFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_0_Setup_BCW{_baseCountPlaceHolder}_{_setupType}.JPG";
+            _breakoutFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_1_Breakout_{_setupType}.JPG";
+            _resultFileNameTemplate = $"{_datePlaceHolder}_{_symbolPlaceHolder}_2_Result_SU{_setupClosePercentGainPlaceHolder}_BO{_breakoutClosePercentGainPlaceHolder}_{_setupType}.JPG";
+
             InitializeComponent();
         }
 
@@ -31,9 +32,11 @@ namespace ChartFileBuilder
             var sfn = _setupFileNameTemplate.Replace(_datePlaceHolder, tbDate.Text);
             sfn = sfn.Replace(_symbolPlaceHolder, tbSymbol.Text);
             sfn = sfn.Replace(_baseCountPlaceHolder, tbWeekBaseCount.Text);
+            sfn = sfn.Replace(_setupType, cbSetupType.Text);
 
             var bofn = _breakoutFileNameTemplate.Replace(_datePlaceHolder, tbDate.Text);
             bofn = bofn.Replace(_symbolPlaceHolder, tbSymbol.Text);
+            bofn = bofn.Replace(_setupType, cbSetupType.Text);
 
             var swingHigh = Convert.ToDouble(tbSwingHigh.Text);
             var suClose = Convert.ToDouble(tbSuClose.Text);
@@ -48,6 +51,7 @@ namespace ChartFileBuilder
             rfn = rfn.Replace(_symbolPlaceHolder, tbSymbol.Text);
             rfn = rfn.Replace(_setupClosePercentGainPlaceHolder, suPercentGain.ToString());
             rfn = rfn.Replace(_breakoutClosePercentGainPlaceHolder, boPercentGain.ToString());
+            rfn = rfn.Replace(_setupType, cbSetupType.Text);
 
             tbSetupFilename.Text = sfn;
             tbBreakoutFilename.Text = bofn;
@@ -68,5 +72,6 @@ namespace ChartFileBuilder
             file.Close();
 
         }
+
     }
 }
