@@ -31,267 +31,273 @@ namespace ChartFileBuilder
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new System.Windows.Forms.Label();
-            lblSymbol = new System.Windows.Forms.Label();
-            lblDate = new System.Windows.Forms.Label();
-            tbSymbol = new System.Windows.Forms.TextBox();
-            tbDate = new System.Windows.Forms.TextBox();
-            lblSuClose = new System.Windows.Forms.Label();
-            lblBoClose = new System.Windows.Forms.Label();
-            tbSuClose = new System.Windows.Forms.TextBox();
-            tbBoClose = new System.Windows.Forms.TextBox();
-            lblSwingHigh = new System.Windows.Forms.Label();
-            tbSwingHigh = new System.Windows.Forms.TextBox();
-            tbOutputDirectory = new System.Windows.Forms.TextBox();
-            lblOutPutDirectory = new System.Windows.Forms.Label();
-            cmdGenerateFiles = new System.Windows.Forms.Button();
-            label2 = new System.Windows.Forms.Label();
-            tbWeekBaseCount = new System.Windows.Forms.TextBox();
-            lblSuFn = new System.Windows.Forms.Label();
-            lblBoFn = new System.Windows.Forms.Label();
-            lblResultFn = new System.Windows.Forms.Label();
-            tbSetupFilename = new System.Windows.Forms.TextBox();
-            tbBreakoutFilename = new System.Windows.Forms.TextBox();
-            tbResultFilename = new System.Windows.Forms.TextBox();
-            saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            label3 = new System.Windows.Forms.Label();
-            cbSetupType = new System.Windows.Forms.ComboBox();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.tbSymbol = new System.Windows.Forms.TextBox();
+            this.tbDate = new System.Windows.Forms.TextBox();
+            this.lblSuClose = new System.Windows.Forms.Label();
+            this.lblBoClose = new System.Windows.Forms.Label();
+            this.tbSuClose = new System.Windows.Forms.TextBox();
+            this.tbBoClose = new System.Windows.Forms.TextBox();
+            this.lblSwingHigh = new System.Windows.Forms.Label();
+            this.tbSwingHigh = new System.Windows.Forms.TextBox();
+            this.tbOutputDirectory = new System.Windows.Forms.TextBox();
+            this.lblOutPutDirectory = new System.Windows.Forms.Label();
+            this.cmdGenerateFiles = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbWeekBaseCount = new System.Windows.Forms.TextBox();
+            this.lblSuFn = new System.Windows.Forms.Label();
+            this.lblBoFn = new System.Windows.Forms.Label();
+            this.lblResultFn = new System.Windows.Forms.Label();
+            this.tbSetupFilename = new System.Windows.Forms.TextBox();
+            this.tbBreakoutFilename = new System.Windows.Forms.TextBox();
+            this.tbResultFilename = new System.Windows.Forms.TextBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbSetupType = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(0, -72);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, -72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // lblSymbol
             // 
-            lblSymbol.AutoSize = true;
-            lblSymbol.Location = new System.Drawing.Point(46, 9);
-            lblSymbol.Name = "lblSymbol";
-            lblSymbol.Size = new System.Drawing.Size(47, 15);
-            lblSymbol.TabIndex = 1;
-            lblSymbol.Text = "Symbol";
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Location = new System.Drawing.Point(46, 9);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(47, 15);
+            this.lblSymbol.TabIndex = 1;
+            this.lblSymbol.Text = "Symbol";
             // 
             // lblDate
             // 
-            lblDate.AutoSize = true;
-            lblDate.Location = new System.Drawing.Point(62, 39);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new System.Drawing.Size(31, 15);
-            lblDate.TabIndex = 2;
-            lblDate.Text = "Date";
-            lblDate.Click += lblDate_Click;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(62, 39);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(31, 15);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date";
             // 
             // tbSymbol
             // 
-            tbSymbol.Location = new System.Drawing.Point(106, 1);
-            tbSymbol.Name = "tbSymbol";
-            tbSymbol.Size = new System.Drawing.Size(100, 23);
-            tbSymbol.TabIndex = 3;
+            this.tbSymbol.Location = new System.Drawing.Point(106, 1);
+            this.tbSymbol.Name = "tbSymbol";
+            this.tbSymbol.Size = new System.Drawing.Size(100, 23);
+            this.tbSymbol.TabIndex = 3;
             // 
             // tbDate
             // 
-            tbDate.Location = new System.Drawing.Point(106, 35);
-            tbDate.Name = "tbDate";
-            tbDate.Size = new System.Drawing.Size(100, 23);
-            tbDate.TabIndex = 4;
+            this.tbDate.Location = new System.Drawing.Point(106, 35);
+            this.tbDate.Name = "tbDate";
+            this.tbDate.Size = new System.Drawing.Size(100, 23);
+            this.tbDate.TabIndex = 4;
             // 
             // lblSuClose
             // 
-            lblSuClose.AutoSize = true;
-            lblSuClose.Location = new System.Drawing.Point(270, 9);
-            lblSuClose.Name = "lblSuClose";
-            lblSuClose.Size = new System.Drawing.Size(69, 15);
-            lblSuClose.TabIndex = 5;
-            lblSuClose.Text = "Setup Close";
-            lblSuClose.Click += lblSuClose_Click;
+            this.lblSuClose.AutoSize = true;
+            this.lblSuClose.Location = new System.Drawing.Point(270, 9);
+            this.lblSuClose.Name = "lblSuClose";
+            this.lblSuClose.Size = new System.Drawing.Size(69, 15);
+            this.lblSuClose.TabIndex = 5;
+            this.lblSuClose.Text = "Setup Close";
             // 
             // lblBoClose
             // 
-            lblBoClose.AutoSize = true;
-            lblBoClose.Location = new System.Drawing.Point(253, 39);
-            lblBoClose.Name = "lblBoClose";
-            lblBoClose.Size = new System.Drawing.Size(86, 15);
-            lblBoClose.TabIndex = 6;
-            lblBoClose.Text = "Breakout Close";
-            lblBoClose.Click += lblBoClose_Click;
+            this.lblBoClose.AutoSize = true;
+            this.lblBoClose.Location = new System.Drawing.Point(253, 39);
+            this.lblBoClose.Name = "lblBoClose";
+            this.lblBoClose.Size = new System.Drawing.Size(86, 15);
+            this.lblBoClose.TabIndex = 6;
+            this.lblBoClose.Text = "Breakout Close";
             // 
             // tbSuClose
             // 
-            tbSuClose.Location = new System.Drawing.Point(355, 6);
-            tbSuClose.Name = "tbSuClose";
-            tbSuClose.Size = new System.Drawing.Size(100, 23);
-            tbSuClose.TabIndex = 7;
+            this.tbSuClose.Location = new System.Drawing.Point(355, 6);
+            this.tbSuClose.Name = "tbSuClose";
+            this.tbSuClose.Size = new System.Drawing.Size(100, 23);
+            this.tbSuClose.TabIndex = 7;
             // 
             // tbBoClose
             // 
-            tbBoClose.Location = new System.Drawing.Point(355, 39);
-            tbBoClose.Name = "tbBoClose";
-            tbBoClose.Size = new System.Drawing.Size(100, 23);
-            tbBoClose.TabIndex = 8;
+            this.tbBoClose.Location = new System.Drawing.Point(355, 39);
+            this.tbBoClose.Name = "tbBoClose";
+            this.tbBoClose.Size = new System.Drawing.Size(100, 23);
+            this.tbBoClose.TabIndex = 8;
             // 
             // lblSwingHigh
             // 
-            lblSwingHigh.AutoSize = true;
-            lblSwingHigh.Location = new System.Drawing.Point(270, 77);
-            lblSwingHigh.Name = "lblSwingHigh";
-            lblSwingHigh.Size = new System.Drawing.Size(68, 15);
-            lblSwingHigh.TabIndex = 9;
-            lblSwingHigh.Text = "Swing High";
+            this.lblSwingHigh.AutoSize = true;
+            this.lblSwingHigh.Location = new System.Drawing.Point(270, 77);
+            this.lblSwingHigh.Name = "lblSwingHigh";
+            this.lblSwingHigh.Size = new System.Drawing.Size(68, 15);
+            this.lblSwingHigh.TabIndex = 9;
+            this.lblSwingHigh.Text = "Swing High";
             // 
             // tbSwingHigh
             // 
-            tbSwingHigh.Location = new System.Drawing.Point(355, 74);
-            tbSwingHigh.Name = "tbSwingHigh";
-            tbSwingHigh.Size = new System.Drawing.Size(100, 23);
-            tbSwingHigh.TabIndex = 10;
+            this.tbSwingHigh.Location = new System.Drawing.Point(355, 74);
+            this.tbSwingHigh.Name = "tbSwingHigh";
+            this.tbSwingHigh.Size = new System.Drawing.Size(100, 23);
+            this.tbSwingHigh.TabIndex = 10;
             // 
             // tbOutputDirectory
             // 
-            tbOutputDirectory.Location = new System.Drawing.Point(147, 151);
-            tbOutputDirectory.Name = "tbOutputDirectory";
-            tbOutputDirectory.Size = new System.Drawing.Size(373, 23);
-            tbOutputDirectory.TabIndex = 11;
-            tbOutputDirectory.Text = "C:\\\\deepdive\\\\charts\\\\";
+            this.tbOutputDirectory.Location = new System.Drawing.Point(147, 151);
+            this.tbOutputDirectory.Name = "tbOutputDirectory";
+            this.tbOutputDirectory.Size = new System.Drawing.Size(373, 23);
+            this.tbOutputDirectory.TabIndex = 11;
+            this.tbOutputDirectory.Text = "C:\\\\deepdive\\\\charts\\\\";
             // 
             // lblOutPutDirectory
             // 
-            lblOutPutDirectory.AutoSize = true;
-            lblOutPutDirectory.Location = new System.Drawing.Point(12, 154);
-            lblOutPutDirectory.Name = "lblOutPutDirectory";
-            lblOutPutDirectory.Size = new System.Drawing.Size(96, 15);
-            lblOutPutDirectory.TabIndex = 12;
-            lblOutPutDirectory.Text = "Output Directory";
+            this.lblOutPutDirectory.AutoSize = true;
+            this.lblOutPutDirectory.Location = new System.Drawing.Point(12, 154);
+            this.lblOutPutDirectory.Name = "lblOutPutDirectory";
+            this.lblOutPutDirectory.Size = new System.Drawing.Size(96, 15);
+            this.lblOutPutDirectory.TabIndex = 12;
+            this.lblOutPutDirectory.Text = "Output Directory";
             // 
             // cmdGenerateFiles
             // 
-            cmdGenerateFiles.Location = new System.Drawing.Point(12, 205);
-            cmdGenerateFiles.Name = "cmdGenerateFiles";
-            cmdGenerateFiles.Size = new System.Drawing.Size(119, 22);
-            cmdGenerateFiles.TabIndex = 13;
-            cmdGenerateFiles.Text = "Generate Files";
-            cmdGenerateFiles.UseVisualStyleBackColor = true;
-            cmdGenerateFiles.Click += cmdGenerateFiles_Click;
+            this.cmdGenerateFiles.Location = new System.Drawing.Point(12, 205);
+            this.cmdGenerateFiles.Name = "cmdGenerateFiles";
+            this.cmdGenerateFiles.Size = new System.Drawing.Size(119, 22);
+            this.cmdGenerateFiles.TabIndex = 13;
+            this.cmdGenerateFiles.Text = "Generate Files";
+            this.cmdGenerateFiles.UseVisualStyleBackColor = true;
+            this.cmdGenerateFiles.Click += new System.EventHandler(this.cmdGenerateFiles_Click);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(1, 77);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(99, 15);
-            label2.TabIndex = 15;
-            label2.Text = "Week Base Count";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Week Base Count";
             // 
             // tbWeekBaseCount
             // 
-            tbWeekBaseCount.Location = new System.Drawing.Point(106, 74);
-            tbWeekBaseCount.Name = "tbWeekBaseCount";
-            tbWeekBaseCount.Size = new System.Drawing.Size(100, 23);
-            tbWeekBaseCount.TabIndex = 16;
+            this.tbWeekBaseCount.Location = new System.Drawing.Point(106, 74);
+            this.tbWeekBaseCount.Name = "tbWeekBaseCount";
+            this.tbWeekBaseCount.Size = new System.Drawing.Size(100, 23);
+            this.tbWeekBaseCount.TabIndex = 16;
             // 
             // lblSuFn
             // 
-            lblSuFn.AutoSize = true;
-            lblSuFn.Location = new System.Drawing.Point(12, 258);
-            lblSuFn.Name = "lblSuFn";
-            lblSuFn.Size = new System.Drawing.Size(88, 15);
-            lblSuFn.TabIndex = 17;
-            lblSuFn.Text = "Setup Filename";
+            this.lblSuFn.AutoSize = true;
+            this.lblSuFn.Location = new System.Drawing.Point(12, 258);
+            this.lblSuFn.Name = "lblSuFn";
+            this.lblSuFn.Size = new System.Drawing.Size(88, 15);
+            this.lblSuFn.TabIndex = 17;
+            this.lblSuFn.Text = "Setup Filename";
             // 
             // lblBoFn
             // 
-            lblBoFn.AutoSize = true;
-            lblBoFn.Location = new System.Drawing.Point(12, 286);
-            lblBoFn.Name = "lblBoFn";
-            lblBoFn.Size = new System.Drawing.Size(105, 15);
-            lblBoFn.TabIndex = 18;
-            lblBoFn.Text = "Breakout Filename";
+            this.lblBoFn.AutoSize = true;
+            this.lblBoFn.Location = new System.Drawing.Point(12, 286);
+            this.lblBoFn.Name = "lblBoFn";
+            this.lblBoFn.Size = new System.Drawing.Size(105, 15);
+            this.lblBoFn.TabIndex = 18;
+            this.lblBoFn.Text = "Breakout Filename";
             // 
             // lblResultFn
             // 
-            lblResultFn.AutoSize = true;
-            lblResultFn.Location = new System.Drawing.Point(18, 318);
-            lblResultFn.Name = "lblResultFn";
-            lblResultFn.Size = new System.Drawing.Size(90, 15);
-            lblResultFn.TabIndex = 19;
-            lblResultFn.Text = "Result Filename";
+            this.lblResultFn.AutoSize = true;
+            this.lblResultFn.Location = new System.Drawing.Point(18, 318);
+            this.lblResultFn.Name = "lblResultFn";
+            this.lblResultFn.Size = new System.Drawing.Size(90, 15);
+            this.lblResultFn.TabIndex = 19;
+            this.lblResultFn.Text = "Result Filename";
             // 
             // tbSetupFilename
             // 
-            tbSetupFilename.Location = new System.Drawing.Point(133, 255);
-            tbSetupFilename.Name = "tbSetupFilename";
-            tbSetupFilename.Size = new System.Drawing.Size(221, 23);
-            tbSetupFilename.TabIndex = 20;
+            this.tbSetupFilename.Location = new System.Drawing.Point(133, 255);
+            this.tbSetupFilename.Name = "tbSetupFilename";
+            this.tbSetupFilename.Size = new System.Drawing.Size(221, 23);
+            this.tbSetupFilename.TabIndex = 20;
             // 
             // tbBreakoutFilename
             // 
-            tbBreakoutFilename.Location = new System.Drawing.Point(133, 286);
-            tbBreakoutFilename.Name = "tbBreakoutFilename";
-            tbBreakoutFilename.Size = new System.Drawing.Size(221, 23);
-            tbBreakoutFilename.TabIndex = 21;
+            this.tbBreakoutFilename.Location = new System.Drawing.Point(133, 286);
+            this.tbBreakoutFilename.Name = "tbBreakoutFilename";
+            this.tbBreakoutFilename.Size = new System.Drawing.Size(221, 23);
+            this.tbBreakoutFilename.TabIndex = 21;
             // 
             // tbResultFilename
             // 
-            tbResultFilename.Location = new System.Drawing.Point(133, 315);
-            tbResultFilename.Name = "tbResultFilename";
-            tbResultFilename.Size = new System.Drawing.Size(221, 23);
-            tbResultFilename.TabIndex = 22;
+            this.tbResultFilename.Location = new System.Drawing.Point(133, 315);
+            this.tbResultFilename.Name = "tbResultFilename";
+            this.tbResultFilename.Size = new System.Drawing.Size(221, 23);
+            this.tbResultFilename.TabIndex = 22;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(270, 115);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(64, 15);
-            label3.TabIndex = 23;
-            label3.Text = "Setup Type";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(270, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Setup Type";
             // 
             // cbSetupType
             // 
-            cbSetupType.FormattingEnabled = true;
-            cbSetupType.Items.AddRange(new object[] { "CB", "CH", "Flag", "HTF", "IHS", "VCP" });
-            cbSetupType.Location = new System.Drawing.Point(355, 112);
-            cbSetupType.Name = "cbSetupType";
-            cbSetupType.Size = new System.Drawing.Size(121, 23);
-            cbSetupType.TabIndex = 24;
+            this.cbSetupType.FormattingEnabled = true;
+            this.cbSetupType.Items.AddRange(new object[] {
+            "3C",
+            "CB",
+            "CH",
+            "Flag",
+            "HTF",
+            "IHS",
+            "VCP",
+            "Surf"});
+            this.cbSetupType.Location = new System.Drawing.Point(355, 112);
+            this.cbSetupType.Name = "cbSetupType";
+            this.cbSetupType.Size = new System.Drawing.Size(121, 23);
+            this.cbSetupType.TabIndex = 24;
             // 
             // ChartFileBuilder
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(679, 450);
-            Controls.Add(cbSetupType);
-            Controls.Add(label3);
-            Controls.Add(tbResultFilename);
-            Controls.Add(tbBreakoutFilename);
-            Controls.Add(tbSetupFilename);
-            Controls.Add(lblResultFn);
-            Controls.Add(lblBoFn);
-            Controls.Add(lblSuFn);
-            Controls.Add(tbWeekBaseCount);
-            Controls.Add(label2);
-            Controls.Add(cmdGenerateFiles);
-            Controls.Add(lblOutPutDirectory);
-            Controls.Add(tbOutputDirectory);
-            Controls.Add(tbSwingHigh);
-            Controls.Add(lblSwingHigh);
-            Controls.Add(tbBoClose);
-            Controls.Add(tbSuClose);
-            Controls.Add(lblBoClose);
-            Controls.Add(lblSuClose);
-            Controls.Add(tbDate);
-            Controls.Add(tbSymbol);
-            Controls.Add(lblDate);
-            Controls.Add(lblSymbol);
-            Controls.Add(label1);
-            Name = "ChartFileBuilder";
-            Text = "Chart File Builder";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(679, 450);
+            this.Controls.Add(this.cbSetupType);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbResultFilename);
+            this.Controls.Add(this.tbBreakoutFilename);
+            this.Controls.Add(this.tbSetupFilename);
+            this.Controls.Add(this.lblResultFn);
+            this.Controls.Add(this.lblBoFn);
+            this.Controls.Add(this.lblSuFn);
+            this.Controls.Add(this.tbWeekBaseCount);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmdGenerateFiles);
+            this.Controls.Add(this.lblOutPutDirectory);
+            this.Controls.Add(this.tbOutputDirectory);
+            this.Controls.Add(this.tbSwingHigh);
+            this.Controls.Add(this.lblSwingHigh);
+            this.Controls.Add(this.tbBoClose);
+            this.Controls.Add(this.tbSuClose);
+            this.Controls.Add(this.lblBoClose);
+            this.Controls.Add(this.lblSuClose);
+            this.Controls.Add(this.tbDate);
+            this.Controls.Add(this.tbSymbol);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.lblSymbol);
+            this.Controls.Add(this.label1);
+            this.Name = "ChartFileBuilder";
+            this.Text = "Chart File Builder";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private void lblBoClose_Click(object sender, EventArgs e)

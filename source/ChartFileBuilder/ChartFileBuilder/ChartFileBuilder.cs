@@ -72,6 +72,5 @@ namespace ChartFileBuilder
             file.Close();
 
         }
-
     }
 }
