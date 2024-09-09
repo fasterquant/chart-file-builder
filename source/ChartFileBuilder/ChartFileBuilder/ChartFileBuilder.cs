@@ -40,7 +40,7 @@ namespace ChartFileBuilder
 
             InitializeComponent();
 
-            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\2018-2019Results.csv";
+            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\2024Results.csv";
             tbSignalFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\SignalsBacktest.csv";
         }
 
@@ -135,11 +135,13 @@ namespace ChartFileBuilder
                 if (!existingFile.Contains(chartFileName))
                 {
                     File.Move(existingFile, Path.Combine(tbOutputDir.Text, chartFileName));
+
                 }
             }
             else
             {
-                File.Create(Path.Combine(tbOutputDir.Text, chartFileName));
+                var f = System.IO.File.Create(Path.Combine(tbOutputDir.Text, chartFileName));
+                f.Close();
             }
         }
      
@@ -186,7 +188,7 @@ namespace ChartFileBuilder
 
         private string GetMatchingFile(string[] currentFiles, string date, string symbol, int fileSequenceNumber)
         {
-            return currentFiles.FirstOrDefault(f => f.Contains(date) && f.Contains(symbol) && f.Contains("_" + fileSequenceNumber.ToString() + "_"));
+            return currentFiles.FirstOrDefault(f => f.Contains(date) && f.Contains("_" + symbol + "_") && f.Contains("_" + fileSequenceNumber.ToString() + "_"));
         }
 
         private List<TradeDispalyInfo> GetTradeDispalyInfos(List<Signal> signals, List<Trade> trades)
