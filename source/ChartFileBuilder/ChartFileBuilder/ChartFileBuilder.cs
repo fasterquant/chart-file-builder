@@ -40,7 +40,7 @@ namespace ChartFileBuilder
 
             InitializeComponent();
 
-            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\2024Results.csv";
+            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\Results\2018-2019Results.csv";
             tbSignalFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\SignalsBacktest.csv";
         }
 
@@ -113,35 +113,46 @@ namespace ChartFileBuilder
             var tradeDispInfos = GetTradeDispalyInfos(signals, trades);
             var currentFiles = Directory.GetFiles(tbOutputDir.Text);
 
+            var winDir = tbOutputDir.Text + Path.DirectorySeparatorChar + "wins";
+            var lossDir = tbOutputDir.Text + Path.DirectorySeparatorChar + "losses";
 
             foreach (var tdp in tradeDispInfos)
             {
+                var resultDir = tdp.ResultPercent >= 0 ? winDir : lossDir;
+
                 var sfn = CreateSetupFileName(_setupFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.WeekBaseCount.ToString(), tdp.Type);
-                CreateChartFile(currentFiles, tdp.Date, tdp.Symbol, 0, sfn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 0, sfn);
 
                 var bofn = CreateBreakoutFileName(_breakoutFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.Type);
-                CreateChartFile(currentFiles, tdp.Date, tdp.Symbol, 1, bofn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 1, bofn);
 
                 var rfn = CreateResultFileName(_resultFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.Type, tdp.ResultPercent.ToString());
-                CreateChartFile(currentFiles, tdp.Date, tdp.Symbol, 2, rfn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 2, rfn);
             }
         }
 
-        private void CreateChartFile(string[] currentFiles, string date, string symbol, int fileSequenceNumber, string chartFileName)
+        private void CreateChartFile(string[] currentFiles, string outputDir, string resultDir, string date, string symbol, int fileSequenceNumber, string chartFileName)
         {
             var existingFile = GetMatchingFile(currentFiles, date, symbol, fileSequenceNumber);
+            var chartFile = Path.Combine(outputDir, chartFileName);
+            var resultFile = Path.Combine(resultDir, chartFileName);
+
             if (existingFile != null)
             {
                 if (!existingFile.Contains(chartFileName))
                 {
-                    File.Move(existingFile, Path.Combine(tbOutputDir.Text, chartFileName));
+                    File.Move(existingFile, chartFile);
 
                 }
             }
             else
             {
-                var f = System.IO.File.Create(Path.Combine(tbOutputDir.Text, chartFileName));
+                var f = System.IO.File.Create(chartFile);
                 f.Close();
+            }
+
+            if (!File.Exists(resultFile)) {
+                File.Copy(chartFile, resultFile);
             }
         }
      
