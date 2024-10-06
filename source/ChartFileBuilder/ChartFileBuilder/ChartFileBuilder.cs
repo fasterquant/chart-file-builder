@@ -40,7 +40,7 @@ namespace ChartFileBuilder
 
             InitializeComponent();
 
-            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\Results\2018-2019Results.csv";
+            tbTradeFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\Results\2018-2019-PeriodBreakdownNoFilter_ADR3.5.csv";
             tbSignalFile.Text = @"C:\repos\github\strategies\source\Tickblaze\StrategyDefinitions\Breakout\SignalsBacktest.csv";
         }
 
@@ -108,6 +108,9 @@ namespace ChartFileBuilder
 
         private void btnGenerateFilesBatch_Click(object sender, EventArgs e)
         {
+            tbStatus.Visible = false;
+            tbStatus.Text = "";
+
             var signals = ReadSignals(tbSignalFile.Text);
             var trades = ReadTrades(tbTradeFile.Text);
             var tradeDispInfos = GetTradeDispalyInfos(signals, trades);
@@ -129,6 +132,9 @@ namespace ChartFileBuilder
                 var rfn = CreateResultFileName(_resultFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.Type, tdp.ResultPercent.ToString());
                 CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 2, rfn);
             }
+
+            tbStatus.Visible = true;
+            tbStatus.Text = "Processing complete!";
         }
 
         private void CreateChartFile(string[] currentFiles, string outputDir, string resultDir, string date, string symbol, int fileSequenceNumber, string chartFileName)
@@ -137,9 +143,10 @@ namespace ChartFileBuilder
             var chartFile = Path.Combine(outputDir, chartFileName);
             var resultFile = Path.Combine(resultDir, chartFileName);
 
-            if (existingFile != null)
+            // Need to check if file exists as it could have been renamed.
+            if (existingFile != null && File.Exists(existingFile))
             {
-                if (!existingFile.Contains(chartFileName))
+                if (!existingFile.Contains(chartFileName) && !File.Exists(chartFile))
                 {
                     File.Move(existingFile, chartFile);
 

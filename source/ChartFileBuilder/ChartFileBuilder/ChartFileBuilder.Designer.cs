@@ -57,6 +57,8 @@ namespace ChartFileBuilder
             cbSetupType = new System.Windows.Forms.ComboBox();
             tabControl = new System.Windows.Forms.TabControl();
             tpBatch = new System.Windows.Forms.TabPage();
+            tbOutputDir = new System.Windows.Forms.TextBox();
+            btnOpenOutputDir = new System.Windows.Forms.Button();
             tbSignalFile = new System.Windows.Forms.TextBox();
             btnOpenSignalFile = new System.Windows.Forms.Button();
             tbTradeFile = new System.Windows.Forms.TextBox();
@@ -64,8 +66,7 @@ namespace ChartFileBuilder
             btnGenerateFilesBatch = new System.Windows.Forms.Button();
             tpSingle = new System.Windows.Forms.TabPage();
             openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            tbOutputDir = new System.Windows.Forms.TextBox();
-            btnOpenOutputDir = new System.Windows.Forms.Button();
+            tbStatus = new System.Windows.Forms.TextBox();
             tabControl.SuspendLayout();
             tpBatch.SuspendLayout();
             tpSingle.SuspendLayout();
@@ -281,6 +282,7 @@ namespace ChartFileBuilder
             // 
             // tpBatch
             // 
+            tpBatch.Controls.Add(tbStatus);
             tpBatch.Controls.Add(tbOutputDir);
             tpBatch.Controls.Add(btnOpenOutputDir);
             tpBatch.Controls.Add(tbSignalFile);
@@ -295,6 +297,23 @@ namespace ChartFileBuilder
             tpBatch.TabIndex = 0;
             tpBatch.Text = "Batch";
             tpBatch.UseVisualStyleBackColor = true;
+            // 
+            // tbOutputDir
+            // 
+            tbOutputDir.Location = new System.Drawing.Point(169, 152);
+            tbOutputDir.Name = "tbOutputDir";
+            tbOutputDir.Size = new System.Drawing.Size(585, 23);
+            tbOutputDir.TabIndex = 6;
+            // 
+            // btnOpenOutputDir
+            // 
+            btnOpenOutputDir.Location = new System.Drawing.Point(36, 152);
+            btnOpenOutputDir.Name = "btnOpenOutputDir";
+            btnOpenOutputDir.Size = new System.Drawing.Size(109, 23);
+            btnOpenOutputDir.TabIndex = 5;
+            btnOpenOutputDir.Text = "Open Output Directory";
+            btnOpenOutputDir.UseVisualStyleBackColor = true;
+            btnOpenOutputDir.Click += btnOpenOutputDir_Click;
             // 
             // tbSignalFile
             // 
@@ -377,22 +396,14 @@ namespace ChartFileBuilder
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // tbOutputDir
+            // tbStatus
             // 
-            tbOutputDir.Location = new System.Drawing.Point(169, 152);
-            tbOutputDir.Name = "tbOutputDir";
-            tbOutputDir.Size = new System.Drawing.Size(585, 23);
-            tbOutputDir.TabIndex = 6;
-            // 
-            // btnOpenOutputDir
-            // 
-            btnOpenOutputDir.Location = new System.Drawing.Point(36, 152);
-            btnOpenOutputDir.Name = "btnOpenOutputDir";
-            btnOpenOutputDir.Size = new System.Drawing.Size(109, 23);
-            btnOpenOutputDir.TabIndex = 5;
-            btnOpenOutputDir.Text = "Open Output Directory";
-            btnOpenOutputDir.UseVisualStyleBackColor = true;
-            btnOpenOutputDir.Click += btnOpenOutputDir_Click;
+            tbStatus.Location = new System.Drawing.Point(36, 281);
+            tbStatus.Name = "tbStatus";
+            tbStatus.ReadOnly = true;
+            tbStatus.Size = new System.Drawing.Size(274, 23);
+            tbStatus.TabIndex = 7;
+            tbStatus.Visible = false;
             // 
             // ChartFileBuilder
             // 
@@ -464,6 +475,7 @@ namespace ChartFileBuilder
         private System.Windows.Forms.Button btnOpenTradeFile;
         private System.Windows.Forms.TextBox tbOutputDir;
         private System.Windows.Forms.Button btnOpenOutputDir;
+        private System.Windows.Forms.TextBox tbStatus;
     }
 }
 
