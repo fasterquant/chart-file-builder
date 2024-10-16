@@ -118,30 +118,34 @@ namespace ChartFileBuilder
 
             var winDir = tbOutputDir.Text + Path.DirectorySeparatorChar + "wins";
             var lossDir = tbOutputDir.Text + Path.DirectorySeparatorChar + "losses";
+            var percentGainSortedDir = tbOutputDir.Text + Path.DirectorySeparatorChar + "percentgainsorted";
 
+            var i = 0;
             foreach (var tdp in tradeDispInfos)
             {
                 var resultDir = tdp.ResultPercent >= 0 ? winDir : lossDir;
 
                 var sfn = CreateSetupFileName(_setupFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.WeekBaseCount.ToString(), tdp.Type);
-                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 0, sfn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, percentGainSortedDir, i, tdp.Date, tdp.Symbol, 0, sfn);
 
                 var bofn = CreateBreakoutFileName(_breakoutFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.Type);
-                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 1, bofn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, percentGainSortedDir, i, tdp.Date, tdp.Symbol, 1, bofn);
 
                 var rfn = CreateResultFileName(_resultFileNameTemplateBatch, tdp.Date, tdp.Symbol, tdp.Type, tdp.ResultPercent.ToString());
-                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, tdp.Date, tdp.Symbol, 2, rfn);
+                CreateChartFile(currentFiles, tbOutputDir.Text, resultDir, percentGainSortedDir, i, tdp.Date, tdp.Symbol, 2, rfn);
+                i++;
             }
 
             tbStatus.Visible = true;
             tbStatus.Text = "Processing complete!";
         }
 
-        private void CreateChartFile(string[] currentFiles, string outputDir, string resultDir, string date, string symbol, int fileSequenceNumber, string chartFileName)
+        private void CreateChartFile(string[] currentFiles, string outputDir, string resultDir, string percentGainSortedDir, int tradeNumber, string date, string symbol, int fileSequenceNumber, string chartFileName)
         {
             var existingFile = GetMatchingFile(currentFiles, date, symbol, fileSequenceNumber);
             var chartFile = Path.Combine(outputDir, chartFileName);
             var resultFile = Path.Combine(resultDir, chartFileName);
+            var percentGainSortedFile = Path.Combine(percentGainSortedDir, tradeNumber.ToString() + "_" + chartFileName);
 
             // Need to check if file exists as it could have been renamed.
             if (existingFile != null && File.Exists(existingFile))
@@ -160,6 +164,11 @@ namespace ChartFileBuilder
 
             if (!File.Exists(resultFile)) {
                 File.Copy(chartFile, resultFile);
+            }
+
+            if (!File.Exists(percentGainSortedFile))
+            {
+                File.Copy(chartFile, percentGainSortedFile);
             }
         }
      
@@ -222,7 +231,7 @@ namespace ChartFileBuilder
                 }
             }
 
-            return tdis;
+            return tdis.OrderByDescending(t => t.ResultPercent).ToList();
         }
 
         private List<Signal> ReadSignals(string path)
