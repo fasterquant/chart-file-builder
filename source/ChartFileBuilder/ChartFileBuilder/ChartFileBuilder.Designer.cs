@@ -57,6 +57,7 @@ namespace ChartFileBuilder
             cbSetupType = new System.Windows.Forms.ComboBox();
             tabControl = new System.Windows.Forms.TabControl();
             tpBatch = new System.Windows.Forms.TabPage();
+            tbStatus = new System.Windows.Forms.TextBox();
             tbOutputDir = new System.Windows.Forms.TextBox();
             btnOpenOutputDir = new System.Windows.Forms.Button();
             tbSignalFile = new System.Windows.Forms.TextBox();
@@ -66,7 +67,8 @@ namespace ChartFileBuilder
             btnGenerateFilesBatch = new System.Windows.Forms.Button();
             tpSingle = new System.Windows.Forms.TabPage();
             openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            tbStatus = new System.Windows.Forms.TextBox();
+            tbInputDir = new System.Windows.Forms.TextBox();
+            btnOpenInputDir = new System.Windows.Forms.Button();
             tabControl.SuspendLayout();
             tpBatch.SuspendLayout();
             tpSingle.SuspendLayout();
@@ -282,6 +284,8 @@ namespace ChartFileBuilder
             // 
             // tpBatch
             // 
+            tpBatch.Controls.Add(tbInputDir);
+            tpBatch.Controls.Add(btnOpenInputDir);
             tpBatch.Controls.Add(tbStatus);
             tpBatch.Controls.Add(tbOutputDir);
             tpBatch.Controls.Add(btnOpenOutputDir);
@@ -298,16 +302,25 @@ namespace ChartFileBuilder
             tpBatch.Text = "Batch";
             tpBatch.UseVisualStyleBackColor = true;
             // 
+            // tbStatus
+            // 
+            tbStatus.Location = new System.Drawing.Point(36, 284);
+            tbStatus.Name = "tbStatus";
+            tbStatus.ReadOnly = true;
+            tbStatus.Size = new System.Drawing.Size(274, 23);
+            tbStatus.TabIndex = 7;
+            tbStatus.Visible = false;
+            // 
             // tbOutputDir
             // 
-            tbOutputDir.Location = new System.Drawing.Point(169, 152);
+            tbOutputDir.Location = new System.Drawing.Point(169, 190);
             tbOutputDir.Name = "tbOutputDir";
             tbOutputDir.Size = new System.Drawing.Size(585, 23);
             tbOutputDir.TabIndex = 6;
             // 
             // btnOpenOutputDir
             // 
-            btnOpenOutputDir.Location = new System.Drawing.Point(36, 152);
+            btnOpenOutputDir.Location = new System.Drawing.Point(36, 190);
             btnOpenOutputDir.Name = "btnOpenOutputDir";
             btnOpenOutputDir.Size = new System.Drawing.Size(109, 23);
             btnOpenOutputDir.TabIndex = 5;
@@ -351,7 +364,7 @@ namespace ChartFileBuilder
             // 
             // btnGenerateFilesBatch
             // 
-            btnGenerateFilesBatch.Location = new System.Drawing.Point(36, 226);
+            btnGenerateFilesBatch.Location = new System.Drawing.Point(36, 235);
             btnGenerateFilesBatch.Name = "btnGenerateFilesBatch";
             btnGenerateFilesBatch.Size = new System.Drawing.Size(147, 28);
             btnGenerateFilesBatch.TabIndex = 0;
@@ -396,14 +409,22 @@ namespace ChartFileBuilder
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // tbStatus
+            // tbInputDir
             // 
-            tbStatus.Location = new System.Drawing.Point(36, 281);
-            tbStatus.Name = "tbStatus";
-            tbStatus.ReadOnly = true;
-            tbStatus.Size = new System.Drawing.Size(274, 23);
-            tbStatus.TabIndex = 7;
-            tbStatus.Visible = false;
+            tbInputDir.Location = new System.Drawing.Point(169, 147);
+            tbInputDir.Name = "tbInputDir";
+            tbInputDir.Size = new System.Drawing.Size(585, 23);
+            tbInputDir.TabIndex = 9;
+            // 
+            // btnOpenInputDir
+            // 
+            btnOpenInputDir.Location = new System.Drawing.Point(36, 147);
+            btnOpenInputDir.Name = "btnOpenInputDir";
+            btnOpenInputDir.Size = new System.Drawing.Size(109, 23);
+            btnOpenInputDir.TabIndex = 8;
+            btnOpenInputDir.Text = "Open Input Directory";
+            btnOpenInputDir.UseVisualStyleBackColor = true;
+            btnOpenInputDir.Click += btnOpenInputDir_Click;
             // 
             // ChartFileBuilder
             // 
@@ -476,6 +497,8 @@ namespace ChartFileBuilder
         private System.Windows.Forms.TextBox tbOutputDir;
         private System.Windows.Forms.Button btnOpenOutputDir;
         private System.Windows.Forms.TextBox tbStatus;
+        private System.Windows.Forms.TextBox tbInputDir;
+        private System.Windows.Forms.Button btnOpenInputDir;
     }
 }
 
